@@ -489,7 +489,10 @@ hr { border: none; border-top: 1px solid var(--plum-light); margin: 1.5rem 0; }
         <input type="text" id="sheet_id" placeholder="e.g. 13TPdRgMpqLN_fS9W16LrBG7QhxzMqaPY">
         <p class="hint">The ID from your Google Sheets URL between /d/ and /edit</p>
       </div>
-      <button class="btn-secondary" onclick="testConnection()" style="margin-top:0.5rem">Test connection</button>
+      <div style="display:flex;gap:0.75rem;margin-top:0.5rem;flex-wrap:wrap">
+        <button class="btn-secondary" onclick="testConnection()">Test connection</button>
+        <button class="btn-secondary" onclick="testCreateDoc()">Test create doc</button>
+      </div>
       <div id="conn_result" style="margin-top:0.75rem; font-size:0.8rem"></div>
     </div>
 
@@ -1020,6 +1023,67 @@ async function createProposalDoc(token, folderId, formData, images) {
   }
 
   return docId;
+}
+
+// ── Test create doc ────────────────────────────────────────────────────────
+async function testCreateDoc() {
+  const el = document.getElementById('conn_result');
+  el.textContent = 'Testing doc creation...';
+  try {
+    const credsRaw = document.getElementById('creds_json').value.trim();
+    if (!credsRaw) throw new Error('No credentials');
+    const folderId = document.getElementById('folder_id').value.trim();
+    if (!folderId) throw new Error('No folder ID');
+
+    el.textContent = 'Getting token...';
+    const token = await getAccessToken(credsRaw);
+    el.textContent = 'Token OK. Trying to create test doc in folder ' + folderId + '...';
+
+    // Step 1: verify we can LIST files in the folder
+    const listResp = await fetch(
+      `https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents&fields=files(id,name)&pageSize=3`,
+      { headers: { Authorization: 'Bearer ' + token } }
+    );
+    const listData = await listResp.json();
+    if (listData.error) throw new Error('List failed: ' + JSON.stringify(listData.error));
+
+    // Step 2: try creating a plain text file first (simpler than a Doc)
+    const testResp = await fetch('https://www.googleapis.com/drive/v3/files?fields=id,name,parents', {
+      method: 'POST',
+      headers: { Authorization: 'Bearer ' + token, 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name: '_test_delete_me.txt',
+        mimeType: 'text/plain',
+        parents: [folderId]
+      })
+    });
+    const testData = await testResp.json();
+    if (testData.error) {
+      el.innerHTML = '<span class="badge badge-err">Plain file create failed (HTTP ' + testResp.status + '): ' + JSON.stringify(testData.error) + '</span>';
+      return;
+    }
+
+    // Step 3: try creating a Google Doc
+    const docResp = await fetch('https://www.googleapis.com/drive/v3/files?fields=id,name,parents', {
+      method: 'POST',
+      headers: { Authorization: 'Bearer ' + token, 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name: '_test_doc_delete_me',
+        mimeType: 'application/vnd.google-apps.document',
+        parents: [folderId]
+      })
+    });
+    const docData = await docResp.json();
+    if (docData.error) {
+      el.innerHTML = '<span class="badge badge-err">Google Doc create failed (HTTP ' + docResp.status + '): ' + JSON.stringify(docData.error) + '</span><br>Plain text file worked (id: ' + testData.id + ')';
+      return;
+    }
+
+    el.innerHTML = '<span class="badge badge-ok">✓ Both file types created successfully!</span><br>Doc ID: ' + docData.id + '<br>Check your Drive folder for _test_delete_me.txt and _test_doc_delete_me — please delete them.';
+
+  } catch(e) {
+    el.innerHTML = '<span class="badge badge-err">✗ ' + e.message + '</span>';
+  }
 }
 
 // ── Test connection ────────────────────────────────────────────────────────
