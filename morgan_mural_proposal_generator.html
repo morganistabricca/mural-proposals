@@ -713,7 +713,7 @@ async function getAccessToken(credsJson) {
   const payload = b64url(JSON.stringify({
     iss: creds.client_email,
     sub: creds.client_email,
-    scope: 'https://www.googleapis.com/auth/drive https://www.googleapis.com/auth/spreadsheets https://www.googleapis.com/auth/documents',
+    scope: 'https://www.googleapis.com/auth/drive https://www.googleapis.com/auth/spreadsheets https://www.googleapis.com/auth/documents https://www.googleapis.com/auth/drive.file',
     aud: 'https://oauth2.googleapis.com/token',
     iat: now,
     exp: now + 3600
@@ -838,7 +838,9 @@ function matchImages(rows, projectType, projectDesc) {
 async function createProposalDoc(token, folderId, formData, images) {
   // 1. Create the doc directly inside the proposals folder via Drive API
   // (Using Drive files.create is more reliable than Docs create + move)
-  const createResp = await fetch('https://www.googleapis.com/drive/v3/files?fields=id', {
+  // Log exactly what we're trying to do
+  console.log('Creating doc in folder:', folderId, 'Title:', formData.docTitle);
+  const createResp = await fetch('https://www.googleapis.com/drive/v3/files?fields=id,name,parents', {
     method: 'POST',
     headers: { Authorization: 'Bearer ' + token, 'Content-Type': 'application/json' },
     body: JSON.stringify({
@@ -847,8 +849,14 @@ async function createProposalDoc(token, folderId, formData, images) {
       parents: [folderId]
     })
   });
-  const doc = await createResp.json();
-  if (!doc.id) throw new Error('Could not create doc: ' + JSON.stringify(doc));
+  const createRespText = await createResp.text();
+  console.log('Drive create response:', createRespText);
+  let doc;
+  try { doc = JSON.parse(createRespText); } catch(e) { throw new Error('Drive API parse error: ' + createRespText); }
+  if (!doc.id) {
+    // Surface the exact error with status code
+    throw new Error('Could not create doc (HTTP ' + createResp.status + '): ' + createRespText);
+  }
   const docId = doc.id;
 
   // 3. Build requests array
