@@ -20,16 +20,16 @@
   --success: #2d6a4f;
   --error: #8b1a1a;
 }
-
+ 
 * { box-sizing: border-box; margin: 0; padding: 0; }
-
+ 
 body {
   font-family: 'Jost', sans-serif;
   background: var(--plum-pale);
   color: var(--text);
   min-height: 100vh;
 }
-
+ 
 header {
   background: var(--plum);
   padding: 2rem 3rem;
@@ -37,7 +37,7 @@ header {
   align-items: center;
   justify-content: space-between;
 }
-
+ 
 .header-title {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.5rem;
@@ -45,7 +45,7 @@ header {
   color: rgba(255,255,255,0.9);
   letter-spacing: 0.05em;
 }
-
+ 
 .header-sub {
   font-size: 0.7rem;
   font-weight: 300;
@@ -54,7 +54,7 @@ header {
   text-transform: uppercase;
   margin-top: 0.2rem;
 }
-
+ 
 .status-dot {
   width: 8px; height: 8px;
   border-radius: 50%;
@@ -65,13 +65,13 @@ header {
 }
 .status-dot.connected { background: #4caf50; }
 .status-text { font-size: 0.75rem; color: rgba(255,255,255,0.5); }
-
+ 
 main {
   max-width: 860px;
   margin: 0 auto;
   padding: 2.5rem 2rem;
 }
-
+ 
 /* ── Tabs ── */
 .tabs {
   display: flex;
@@ -94,7 +94,7 @@ main {
 .tab.active { color: var(--accent); border-bottom-color: var(--accent); }
 .tab-panel { display: none; }
 .tab-panel.active { display: block; }
-
+ 
 /* ── Cards ── */
 .card {
   background: var(--white);
@@ -103,7 +103,7 @@ main {
   padding: 1.75rem 2rem;
   margin-bottom: 1.25rem;
 }
-
+ 
 .card-title {
   font-size: 0.65rem;
   font-weight: 500;
@@ -114,11 +114,11 @@ main {
   padding-bottom: 0.75rem;
   border-bottom: 1px solid var(--plum-light);
 }
-
+ 
 /* ── Form elements ── */
 .field { margin-bottom: 1.1rem; }
 .field:last-child { margin-bottom: 0; }
-
+ 
 label {
   display: block;
   font-size: 0.75rem;
@@ -127,7 +127,7 @@ label {
   margin-bottom: 0.4rem;
   letter-spacing: 0.03em;
 }
-
+ 
 input[type="text"],
 input[type="number"],
 input[type="email"],
@@ -144,17 +144,17 @@ select {
   transition: border-color 0.2s;
   -webkit-appearance: none;
 }
-
+ 
 input:focus, textarea:focus, select:focus {
   outline: none;
   border-color: var(--accent);
 }
-
+ 
 textarea { resize: vertical; min-height: 80px; line-height: 1.6; }
-
+ 
 .row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
 .row3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; }
-
+ 
 .type-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.4rem; }
 .pill {
   padding: 0.35rem 1rem;
@@ -172,7 +172,7 @@ textarea { resize: vertical; min-height: 80px; line-height: 1.6; }
   color: rgba(255,255,255,0.9);
   border-color: var(--plum);
 }
-
+ 
 /* ── Pricing rows ── */
 .pricing-row {
   display: grid;
@@ -182,7 +182,7 @@ textarea { resize: vertical; min-height: 80px; line-height: 1.6; }
   margin-bottom: 0.6rem;
 }
 .pricing-row .field { margin-bottom: 0; }
-
+ 
 .remove-btn {
   width: 36px; height: 36px;
   border: 1px solid var(--border);
@@ -197,7 +197,7 @@ textarea { resize: vertical; min-height: 80px; line-height: 1.6; }
   transition: all 0.15s;
 }
 .remove-btn:hover { border-color: #c0392b; color: #c0392b; }
-
+ 
 .add-btn {
   width: 100%;
   padding: 0.55rem;
@@ -212,7 +212,7 @@ textarea { resize: vertical; min-height: 80px; line-height: 1.6; }
   margin-top: 0.4rem;
 }
 .add-btn:hover { border-color: var(--accent); color: var(--accent); }
-
+ 
 .total-strip {
   display: flex;
   justify-content: space-between;
@@ -223,7 +223,7 @@ textarea { resize: vertical; min-height: 80px; line-height: 1.6; }
 }
 .total-label { font-size: 0.78rem; color: var(--muted); }
 .total-amount { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 400; color: var(--plum); }
-
+ 
 /* ── Credentials area ── */
 .cred-area {
   font-family: 'Courier New', monospace;
@@ -233,14 +233,14 @@ textarea { resize: vertical; min-height: 80px; line-height: 1.6; }
   color: #a8d8a8;
   border: 1px solid #333;
 }
-
+ 
 .hint {
   font-size: 0.72rem;
   color: var(--muted);
   margin-top: 0.4rem;
   line-height: 1.5;
 }
-
+ 
 /* ── Buttons ── */
 .btn-primary {
   width: 100%;
@@ -260,7 +260,7 @@ textarea { resize: vertical; min-height: 80px; line-height: 1.6; }
 }
 .btn-primary:hover { background: var(--plum-mid); }
 .btn-primary:disabled { opacity: 0.4; cursor: not-allowed; }
-
+ 
 .btn-secondary {
   padding: 0.55rem 1.25rem;
   background: transparent;
@@ -273,7 +273,7 @@ textarea { resize: vertical; min-height: 80px; line-height: 1.6; }
   transition: all 0.15s;
 }
 .btn-secondary:hover { background: var(--plum-light); }
-
+ 
 /* ── Log / output ── */
 .log {
   background: #1a1a1a;
@@ -290,7 +290,7 @@ textarea { resize: vertical; min-height: 80px; line-height: 1.6; }
 .log .err { color: #f4a0a0; }
 .log .info { color: #a0c4f4; }
 .log .dim { color: #666; }
-
+ 
 .result-card {
   background: var(--plum-light);
   border: 1px solid var(--border);
@@ -308,7 +308,7 @@ textarea { resize: vertical; min-height: 80px; line-height: 1.6; }
   word-break: break-all;
 }
 .result-link:hover { text-decoration: underline; }
-
+ 
 .spinner {
   display: inline-block;
   width: 14px; height: 14px;
@@ -320,7 +320,7 @@ textarea { resize: vertical; min-height: 80px; line-height: 1.6; }
   margin-right: 6px;
 }
 @keyframes spin { to { transform: rotate(360deg); } }
-
+ 
 .badge {
   display: inline-block;
   padding: 0.2rem 0.6rem;
@@ -331,7 +331,7 @@ textarea { resize: vertical; min-height: 80px; line-height: 1.6; }
 }
 .badge-ok { background: #d4edda; color: #2d6a4f; }
 .badge-err { background: #fde8e8; color: #8b1a1a; }
-
+ 
 .image-preview {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -356,12 +356,12 @@ textarea { resize: vertical; min-height: 80px; line-height: 1.6; }
   color: var(--accent);
   margin-bottom: 0.25rem;
 }
-
+ 
 hr { border: none; border-top: 1px solid var(--plum-light); margin: 1.5rem 0; }
 </style>
 </head>
 <body>
-
+ 
 <header>
   <div>
     <div class="header-title">Morgan Mural Studios</div>
@@ -372,17 +372,17 @@ hr { border: none; border-top: 1px solid var(--plum-light); margin: 1.5rem 0; }
     <span class="status-text" id="status-text">Not configured</span>
   </div>
 </header>
-
+ 
 <main>
   <div class="tabs">
     <div class="tab active" onclick="switchTab('proposal')">Proposal</div>
     <div class="tab" onclick="switchTab('config')">Configuration</div>
     <div class="tab" onclick="switchTab('output')">Output</div>
   </div>
-
+ 
   <!-- ── PROPOSAL TAB ── -->
   <div class="tab-panel active" id="tab-proposal">
-
+ 
     <div class="card">
       <div class="card-title">Client + project</div>
       <div class="row">
@@ -411,7 +411,7 @@ hr { border: none; border-top: 1px solid var(--plum-light); margin: 1.5rem 0; }
         <textarea id="constraints" style="min-height:56px" placeholder="e.g. Family-friendly, no figures, must complement adjacent 1970s tile mosaic"></textarea>
       </div>
     </div>
-
+ 
     <div class="card">
       <div class="card-title">Wall dimensions + pricing</div>
       <div id="pricing_rows">
@@ -439,7 +439,7 @@ hr { border: none; border-top: 1px solid var(--plum-light); margin: 1.5rem 0; }
         <span class="total-amount" id="total_display">—</span>
       </div>
     </div>
-
+ 
     <div class="card">
       <div class="card-title">Deposit invoice</div>
       <div class="row">
@@ -454,17 +454,17 @@ hr { border: none; border-top: 1px solid var(--plum-light); margin: 1.5rem 0; }
       </div>
       <div class="field"><label>Payment remit address</label><input type="text" id="remit_address" value="Morgan Mural Studios, 876 Carmel Ave., Los Altos, CA 94022"></div>
     </div>
-
+ 
     <div class="card">
       <div class="card-title">Your voice (optional)</div>
       <div class="field"><label>Paste 1–2 sentences from a past cover letter you liked — AI will match your tone</label>
         <textarea id="voice_sample" style="min-height:64px" placeholder="e.g. I look forward to being part of the icing on the cake of this important community hub."></textarea>
       </div>
     </div>
-
+ 
     <button class="btn-primary" id="gen_btn" onclick="generate()">Generate proposal → Google Doc</button>
   </div>
-
+ 
   <!-- ── CONFIG TAB ── -->
   <div class="tab-panel" id="tab-config">
     <div class="card">
@@ -476,7 +476,7 @@ hr { border: none; border-top: 1px solid var(--plum-light); margin: 1.5rem 0; }
       </div>
       <div id="creds_status" style="margin-top:0.75rem"></div>
     </div>
-
+ 
     <div class="card">
       <div class="card-title">Google Drive + Sheets IDs</div>
       <div class="field">
@@ -495,7 +495,7 @@ hr { border: none; border-top: 1px solid var(--plum-light); margin: 1.5rem 0; }
       </div>
       <div id="conn_result" style="margin-top:0.75rem; font-size:0.8rem"></div>
     </div>
-
+ 
     <div class="card">
       <div class="card-title">Proposal defaults</div>
       <div class="row">
@@ -516,14 +516,14 @@ hr { border: none; border-top: 1px solid var(--plum-light); margin: 1.5rem 0; }
       <button class="btn-primary" onclick="saveConfig()" style="margin-top:0.5rem">Save configuration</button>
     </div>
   </div>
-
+ 
   <!-- ── OUTPUT TAB ── -->
   <div class="tab-panel" id="tab-output">
     <div class="card">
       <div class="card-title">Generation log</div>
       <div class="log" id="log"><span class="dim">Waiting to generate...</span></div>
     </div>
-
+ 
     <div class="result-card" id="result_card">
       <div style="font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:0.75rem">Proposal created</div>
       <a class="result-link" id="result_link" href="#" target="_blank">Open in Google Docs →</a>
@@ -535,14 +535,14 @@ hr { border: none; border-top: 1px solid var(--plum-light); margin: 1.5rem 0; }
       <div class="image-preview" id="image_preview"></div>
     </div>
   </div>
-
+ 
 </main>
-
+ 
 <script>
 // ── State ──────────────────────────────────────────────────────────────────
 let cfg = {};
 let selectedType = '';
-
+ 
 function loadConfig() {
   try {
     const saved = localStorage.getItem('mms_config');
@@ -562,7 +562,7 @@ function loadConfig() {
     }
   } catch(e) {}
 }
-
+ 
 function saveConfig() {
   cfg = {
     folder_id: document.getElementById('folder_id').value.trim(),
@@ -580,7 +580,7 @@ function saveConfig() {
   validateCreds();
   alert('Configuration saved.');
 }
-
+ 
 function validateCreds() {
   const raw = document.getElementById('creds_json').value.trim();
   const statusEl = document.getElementById('creds_status');
@@ -602,7 +602,7 @@ function validateCreds() {
     dot.className = 'status-dot'; txt.textContent = 'Invalid JSON';
   }
 }
-
+ 
 // ── Tabs ──────────────────────────────────────────────────────────────────
 function switchTab(name) {
   document.querySelectorAll('.tab').forEach((t,i) => {
@@ -612,7 +612,7 @@ function switchTab(name) {
   document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
   document.getElementById('tab-' + name).classList.add('active');
 }
-
+ 
 // ── Type pills ─────────────────────────────────────────────────────────────
 document.querySelectorAll('.pill').forEach(p => {
   p.addEventListener('click', () => {
@@ -621,7 +621,7 @@ document.querySelectorAll('.pill').forEach(p => {
     selectedType = p.dataset.val;
   });
 });
-
+ 
 // ── Pricing rows ───────────────────────────────────────────────────────────
 function addRow() {
   const container = document.getElementById('pricing_rows');
@@ -631,12 +631,12 @@ function addRow() {
   container.appendChild(row);
   row.querySelectorAll('input').forEach(i => i.addEventListener('input', updateTotals));
 }
-
+ 
 function removeRow(btn) {
   const rows = document.querySelectorAll('.pricing-row');
   if (rows.length > 1) { btn.closest('.pricing-row').remove(); updateTotals(); }
 }
-
+ 
 function getItems() {
   return Array.from(document.querySelectorAll('.pricing-row')).map(r => ({
     desc: r.querySelector('.p-desc').value || 'Wall',
@@ -644,7 +644,7 @@ function getItems() {
     h: parseFloat(r.querySelector('.p-h').value) || 0,
   })).filter(i => i.w > 0 && i.h > 0);
 }
-
+ 
 function updateTotals() {
   const items = getItems();
   const rate = parseFloat(document.getElementById('rate').value) || 0;
@@ -656,7 +656,7 @@ function updateTotals() {
   document.getElementById('total_display').textContent = total > 0 ? '$' + Math.round(total).toLocaleString() : '—';
   updateDeposit();
 }
-
+ 
 function updateDeposit() {
   const type = document.getElementById('deposit_type').value;
   const designFee = parseFloat(document.getElementById('design_fee').value) || 0;
@@ -670,12 +670,12 @@ function updateDeposit() {
   else if (type === '50pct') { el.value = total > 0 ? Math.round(total * 0.5) : ''; el.readOnly = true; }
   else { el.readOnly = false; }
 }
-
+ 
 ['rate','design_fee','extra_amt'].forEach(id => {
   document.getElementById(id).addEventListener('input', updateTotals);
 });
 document.querySelectorAll('.p-w,.p-h').forEach(i => i.addEventListener('input', updateTotals));
-
+ 
 // ── Google Auth (JWT → access token) ─────────────────────────────────────
 // b64url: encode bytes or string to base64url
 function b64url(input) {
@@ -691,7 +691,7 @@ function b64url(input) {
   for (let i = 0; i < bytes.length; i++) binary += String.fromCharCode(bytes[i]);
   return btoa(binary).replace(/=/g, '').replace(/\+/g, '-').replace(/\//g, '_');
 }
-
+ 
 function pemToBinary(pem) {
   const normalized = pem.replace(/\\n/g, '\n');
   const b64 = normalized
@@ -703,14 +703,14 @@ function pemToBinary(pem) {
   for (let i = 0; i < binary.length; i++) buf[i] = binary.charCodeAt(i);
   return buf.buffer;
 }
-
+ 
 async function getAccessToken(credsJson) {
   const creds = typeof credsJson === 'string' ? JSON.parse(credsJson) : credsJson;
   if (!creds.private_key) throw new Error('private_key missing from credentials');
   if (!creds.client_email) throw new Error('client_email missing from credentials');
-
+ 
   const now = Math.floor(Date.now() / 1000);
-
+ 
   // Build unsigned JWT
   const header  = b64url(JSON.stringify({ alg: 'RS256', typ: 'JWT' }));
   const payload = b64url(JSON.stringify({
@@ -722,7 +722,7 @@ async function getAccessToken(credsJson) {
     exp: now + 3600
   }));
   const unsigned = header + '.' + payload;
-
+ 
   // Import key
   let cryptoKey;
   try {
@@ -736,16 +736,16 @@ async function getAccessToken(credsJson) {
   } catch(e) {
     throw new Error('Key import failed (' + e.message + '). Ensure the full JSON was pasted including private_key.');
   }
-
+ 
   // Sign
   const sigBuf = await crypto.subtle.sign(
     { name: 'RSASSA-PKCS1-v1_5' },
     cryptoKey,
     new TextEncoder().encode(unsigned)
   );
-
+ 
   const jwt = unsigned + '.' + b64url(new Uint8Array(sigBuf));
-
+ 
   // Exchange for access token
   const resp = await fetch('https://oauth2.googleapis.com/token', {
     method: 'POST',
@@ -758,7 +758,7 @@ async function getAccessToken(credsJson) {
   }
   return data.access_token;
 }
-
+ 
 // ── Drive / Sheets helpers ─────────────────────────────────────────────────
 async function readSampleProposalText(token, folderId) {
   // Find a .docx or Google Doc in the folder to use as voice reference
@@ -775,14 +775,14 @@ async function readSampleProposalText(token, folderId) {
   const text = await er.text();
   return text.substring(0, 1200); // first ~1200 chars as voice reference
 }
-
+ 
 async function listFiles(token, folderId) {
   const url = `https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents+and+trashed=false&fields=files(id,name,mimeType)&pageSize=100`;
   const r = await fetch(url, { headers: { Authorization: 'Bearer ' + token } });
   const d = await r.json();
   return d.files || [];
 }
-
+ 
 async function readSheet(token, sheetId) {
   // Try to find the first sheet name, then read from it
   const metaUrl = `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}?fields=sheets.properties.title`;
@@ -800,7 +800,7 @@ async function readSheet(token, sheetId) {
   if (d.error) throw new Error('Sheet read error: ' + d.error.message);
   return d.values || [];
 }
-
+ 
 function matchImages(rows, projectType, projectDesc) {
   if (!rows || rows.length < 2) return [];
   const headers = rows[0].map(h => h.toLowerCase().trim());
@@ -811,9 +811,9 @@ function matchImages(rows, projectType, projectDesc) {
   const paletteIdx = headers.findIndex(h => h.includes('palette'));
   const moodIdx = headers.findIndex(h => h.includes('mood'));
   const notesIdx = headers.findIndex(h => h.includes('notes'));
-
+ 
   const keywords = (projectType + ' ' + projectDesc).toLowerCase().split(/\W+/).filter(w => w.length > 3);
-
+ 
   const scored = rows.slice(1).map(row => {
     if (!row[fnIdx]) return null;
     const rowText = row.join(' ').toLowerCase();
@@ -832,11 +832,11 @@ function matchImages(rows, projectType, projectDesc) {
       score
     };
   }).filter(Boolean);
-
+ 
   scored.sort((a, b) => b.score - a.score);
   return scored.slice(0, 5);
 }
-
+ 
 // ── Google Docs builder ────────────────────────────────────────────────────
 async function createProposalDoc(token, folderId, formData, images) {
   // 1. Create the doc directly inside the proposals folder via Drive API
@@ -861,11 +861,11 @@ async function createProposalDoc(token, folderId, formData, images) {
     throw new Error('Could not create doc (HTTP ' + createResp.status + '): ' + createRespText);
   }
   const docId = doc.id;
-
+ 
   // 3. Build requests array
   const reqs = [];
   let cursor = 1;
-
+ 
   function ins(text, style) {
     reqs.push({ insertText: { location: { index: cursor }, text } });
     if (style) {
@@ -879,7 +879,7 @@ async function createProposalDoc(token, folderId, formData, images) {
     }
     cursor += text.length;
   }
-
+ 
   function insStyled(text, bold, size, color) {
     reqs.push({ insertText: { location: { index: cursor }, text } });
     const fmt = {};
@@ -891,10 +891,10 @@ async function createProposalDoc(token, folderId, formData, images) {
     }
     cursor += text.length;
   }
-
+ 
   const today = new Date().toLocaleDateString('en-US', { year:'numeric', month:'long', day:'numeric' });
   const plum = { red: 0.176, green: 0.102, blue: 0.180 };
-
+ 
   // ── PAGE 1: Cover letter ──────────────────────────────────────────────
   ins('\n');
   ins(today + '\n\n');
@@ -909,19 +909,19 @@ async function createProposalDoc(token, folderId, formData, images) {
   ins(formData.studioName + '\n');
   insStyled('California State Contractors License #' + formData.licenseNo + '\n', false, 10, null);
   ins('\n');
-
+ 
   // ── PAGE BREAK + placeholder for work examples ────────────────────────
   reqs.push({ insertPageBreak: { location: { index: cursor } } });
   cursor += 1;
   insStyled('[INSERT: Project area photos and concept description here]\n\n', false, 11, { red:0.6, green:0.4, blue:0.0 });
   insStyled('[INSERT: Examples of relevant work — add as many pages as needed]\n', false, 11, { red:0.6, green:0.4, blue:0.0 });
   ins('\n');
-
+ 
   // ── PAGE BREAK + Bid for Work ─────────────────────────────────────────
   reqs.push({ insertPageBreak: { location: { index: cursor } } });
   cursor += 1;
   insStyled('Bid for Work\n\n', true, 16, plum);
-
+ 
   // Table: pricing
   const tableRows = [];
   tableRows.push(['Description', 'Fee']); // header
@@ -932,7 +932,7 @@ async function createProposalDoc(token, folderId, formData, images) {
   });
   if (formData.extraDesc && formData.extraAmt > 0) tableRows.push([formData.extraDesc, '$' + Math.round(formData.extraAmt).toLocaleString()]);
   tableRows.push(['Total project fee', '$' + Math.round(formData.total).toLocaleString()]);
-
+ 
   reqs.push({
     insertTable: {
       rows: tableRows.length,
@@ -953,7 +953,7 @@ async function createProposalDoc(token, folderId, formData, images) {
   ins('\n');
   if (formData.pricingNotes) ins(formData.pricingNotes + '\n');
   ins('\n');
-
+ 
   // ── PAGE BREAK + Deposit Invoice ──────────────────────────────────────
   reqs.push({ insertPageBreak: { location: { index: cursor } } });
   cursor += 1;
@@ -963,7 +963,7 @@ async function createProposalDoc(token, folderId, formData, images) {
   ins(formData.clientName + '\n');
   if (formData.clientEmail) ins(formData.clientEmail + '\n');
   ins('\nRe: ' + formData.reLine + '\n\n');
-
+ 
   const invoiceRows = [];
   invoiceRows.push(['Description', 'Fee']);
   formData.items.forEach(item => {
@@ -974,7 +974,7 @@ async function createProposalDoc(token, folderId, formData, images) {
   if (formData.extraDesc && formData.extraAmt > 0) invoiceRows.push([formData.extraDesc, '$' + Math.round(formData.extraAmt).toLocaleString()]);
   invoiceRows.push(['Total project fee', '$' + Math.round(formData.total).toLocaleString()]);
   invoiceRows.push(['Deposit due now', '$' + Math.round(formData.depositAmt).toLocaleString()]);
-
+ 
   reqs.push({ insertTable: { rows: invoiceRows.length, columns: 2, location: { index: cursor } } });
   cursor += 1;
   for (let r = 0; r < invoiceRows.length; r++) {
@@ -995,20 +995,20 @@ async function createProposalDoc(token, folderId, formData, images) {
   ins(formData.studioName + '\n');
   insStyled('Contractors State License #' + formData.licenseNo + '\n', false, 10, null);
   ins('\n');
-
+ 
   // ── Placeholder pages ──────────────────────────────────────────────────
   reqs.push({ insertPageBreak: { location: { index: cursor } } });
   cursor += 1;
   insStyled('[INSERT: Certificate of Liability Insurance — ' + (formData.insuranceFilename || 'Liability_Insurance.pdf') + ']\n', false, 11, { red:0.6, green:0.4, blue:0.0 });
   insStyled('Note: In your final PDF, replace this page with the insurance cert from your Drive folder.\n', false, 10, { red:0.5, green:0.5, blue:0.5 });
   ins('\n');
-
+ 
   reqs.push({ insertPageBreak: { location: { index: cursor } } });
   cursor += 1;
   insStyled('[INSERT: References page — ' + (formData.referencesFilename || 'One_Page_Reference.pdf') + ']\n', false, 11, { red:0.6, green:0.4, blue:0.0 });
   insStyled('Note: In your final PDF, replace this page with your references doc from your Drive folder.\n', false, 10, { red:0.5, green:0.5, blue:0.5 });
   ins('\n');
-
+ 
   // 4. Apply all requests in batches
   const BATCH = 50;
   for (let i = 0; i < reqs.length; i += BATCH) {
@@ -1021,10 +1021,10 @@ async function createProposalDoc(token, folderId, formData, images) {
     const rd = await r.json();
     if (rd.error) throw new Error('Doc update error: ' + JSON.stringify(rd.error));
   }
-
+ 
   return docId;
 }
-
+ 
 // ── Test create doc ────────────────────────────────────────────────────────
 async function testCreateDoc() {
   const el = document.getElementById('conn_result');
@@ -1034,11 +1034,11 @@ async function testCreateDoc() {
     if (!credsRaw) throw new Error('No credentials');
     const folderId = document.getElementById('folder_id').value.trim();
     if (!folderId) throw new Error('No folder ID');
-
+ 
     el.textContent = 'Getting token...';
     const token = await getAccessToken(credsRaw);
     el.textContent = 'Token OK. Trying to create test doc in folder ' + folderId + '...';
-
+ 
     // Step 1: verify we can LIST files in the folder
     const listResp = await fetch(
       `https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents&fields=files(id,name)&pageSize=3`,
@@ -1046,7 +1046,7 @@ async function testCreateDoc() {
     );
     const listData = await listResp.json();
     if (listData.error) throw new Error('List failed: ' + JSON.stringify(listData.error));
-
+ 
     // Step 2: try creating a plain text file first (simpler than a Doc)
     const testResp = await fetch('https://www.googleapis.com/drive/v3/files?fields=id,name,parents', {
       method: 'POST',
@@ -1062,7 +1062,7 @@ async function testCreateDoc() {
       el.innerHTML = '<span class="badge badge-err">Plain file create failed (HTTP ' + testResp.status + '): ' + JSON.stringify(testData.error) + '</span>';
       return;
     }
-
+ 
     // Step 3: try creating a Google Doc
     const docResp = await fetch('https://www.googleapis.com/drive/v3/files?fields=id,name,parents', {
       method: 'POST',
@@ -1078,14 +1078,14 @@ async function testCreateDoc() {
       el.innerHTML = '<span class="badge badge-err">Google Doc create failed (HTTP ' + docResp.status + '): ' + JSON.stringify(docData.error) + '</span><br>Plain text file worked (id: ' + testData.id + ')';
       return;
     }
-
+ 
     el.innerHTML = '<span class="badge badge-ok">✓ Both file types created successfully!</span><br>Doc ID: ' + docData.id + '<br>Check your Drive folder for _test_delete_me.txt and _test_doc_delete_me — please delete them.';
-
+ 
   } catch(e) {
     el.innerHTML = '<span class="badge badge-err">✗ ' + e.message + '</span>';
   }
 }
-
+ 
 // ── Test connection ────────────────────────────────────────────────────────
 async function testConnection() {
   const el = document.getElementById('conn_result');
@@ -1103,7 +1103,7 @@ async function testConnection() {
     el.innerHTML = `<span class="badge badge-err">✗ ${e.message}</span>`;
   }
 }
-
+ 
 // ── AI cover letter ────────────────────────────────────────────────────────
 async function generateCoverLetter(formData) {
   let voiceSample = document.getElementById('voice_sample').value.trim();
@@ -1111,17 +1111,17 @@ async function generateCoverLetter(formData) {
   // Instead we generate the cover letter via Claude.ai artifact proxy.
   // Try the API first; if it fails (CORS / network), fall back to a
   // well-structured template that mirrors Morgan's voice.
-
+ 
   // If no manual voice sample, try to pull from a sample proposal in Drive
   if (!voiceSample && formData.driveToken && formData.sampleProposalText) {
     voiceSample = formData.sampleProposalText.substring(0, 800);
   }
-
+ 
   try {
     const systemPrompt = 'You are writing a proposal cover letter for Morgan Mural Studios, a professional mural artist based in Los Altos, California. Write a concise, warm, professional cover letter in first person from Morgan Bricca Berlin. The artist has 25 years of experience, a CA contractors license #994746, and has worked with the City of San Jose, Google.org, and Stanford University with over 50 Bay Area public murals.\n' + (voiceSample ? 'Match this tone from past proposals: "' + voiceSample + '"' : 'Tone: warm, confident, community-focused. Close with a forward-looking sentence.') + '\nWrite ONLY the body paragraphs — no date, no salutation, no sign-off. 2-3 paragraphs. Be specific to the project.';
-
+ 
     const userPrompt = 'Project: ' + formData.reLine + '\nClient: ' + formData.clientName + '\nType: ' + formData.projectType + '\nDescription: ' + formData.projectDesc + (formData.constraints ? '\nNotes: ' + formData.constraints : '');
-
+ 
     const resp = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -1146,7 +1146,7 @@ async function generateCoverLetter(formData) {
     return 'Thank you for reaching out regarding ' + formData.reLine + '. I have been a professional mural artist for 25 years, and a licensed paint contractor since 2014. I have worked on dozens of large commercial and public projects including collaborations with the City of San Jose, Google.org, and Stanford University. During my tenure as a professional artist, with over 50 public mural projects in the Bay Area, I have seen the long tail of appreciation and visual impact the investment in beautiful art can have.\n\n' + projectSentence + (typePhrase ? typePhrase + '. ' : '. ') + 'This proposal includes pricing and examples of relevant work to illustrate the level of detail and care I bring to every project. My approach begins with deep listening — to the community, the space, and the stories that already live there. Each mural is developed collaboratively, ensuring the final work reflects the people who will inhabit it daily.\n\nI look forward to transforming this space together.';
   }
 }
-
+ 
 // ── Main generate ─────────────────────────────────────────────────────────
 function log(msg, cls='') {
   const el = document.getElementById('log');
@@ -1154,25 +1154,25 @@ function log(msg, cls='') {
   el.innerHTML += `<div class="${cls}">${msg}</div>`;
   el.scrollTop = el.scrollHeight;
 }
-
+ 
 async function generate() {
   const btn = document.getElementById('gen_btn');
   const clientName = document.getElementById('client_name').value.trim();
   const projectDesc = document.getElementById('project_desc').value.trim();
   if (!clientName || !projectDesc) { alert('Please fill in client name and project description.'); return; }
-
+ 
   const credsRaw = (cfg.creds_json || document.getElementById('creds_json').value).trim();
   if (!credsRaw) { alert('No credentials found. Go to the Configuration tab and paste your service account JSON.'); switchTab('config'); return; }
-
+ 
   const folderId = (cfg.folder_id || document.getElementById('folder_id').value).trim();
   const sheetId = (cfg.sheet_id || document.getElementById('sheet_id').value).trim();
   if (!folderId) { alert('No Drive folder ID. Go to Configuration.'); switchTab('config'); return; }
-
+ 
   btn.disabled = true;
   btn.innerHTML = '<span class="spinner"></span>Generating...';
   switchTab('output');
   document.getElementById('result_card').classList.remove('show');
-
+ 
   const items = getItems();
   const rate = parseFloat(document.getElementById('rate').value) || 0;
   const designFee = parseFloat(document.getElementById('design_fee').value) || 0;
@@ -1182,7 +1182,7 @@ async function generate() {
   const depositAmt = parseFloat(document.getElementById('deposit_amt').value) || 0;
   const contactName = document.getElementById('contact_name').value.trim();
   const firstName = contactName.split(' ')[0] || clientName;
-
+ 
   const formData = {
     clientName,
     contactName,
@@ -1206,12 +1206,12 @@ async function generate() {
     firstName,
     docTitle: clientName + ' — Mural Proposal — ' + new Date().toLocaleDateString('en-US', {month:'short', year:'numeric'}),
   };
-
+ 
   try {
     log('→ Authenticating with Google...', 'info');
     const token = await getAccessToken(credsRaw);
     log('✓ Authenticated', 'ok');
-
+ 
     let matchedImages = [];
     if (sheetId) {
       log('→ Reading image database...', 'info');
@@ -1222,7 +1222,7 @@ async function generate() {
     } else {
       log('⚠ No spreadsheet ID — skipping image matching', 'dim');
     }
-
+ 
     // Try to read a sample proposal for voice reference
     let sampleText = '';
     try {
@@ -1231,40 +1231,40 @@ async function generate() {
     } catch(e) { /* not critical */ }
     formData.sampleProposalText = sampleText;
     formData.driveToken = token;
-
+ 
     log('→ Writing AI cover letter...', 'info');
     formData.coverLetter = await generateCoverLetter(formData);
     log('✓ Cover letter written', 'ok');
-
+ 
     log('→ Creating Google Doc...', 'info');
     const docId = await createProposalDoc(token, folderId, formData, matchedImages);
     log('✓ Proposal document created!', 'ok');
-
+ 
     const docUrl = `https://docs.google.com/document/d/${docId}/edit`;
     log(`→ <a href="${docUrl}" target="_blank" style="color:#a0c4f4">${formData.docTitle}</a>`, 'ok');
-
+ 
     // Show result
     document.getElementById('result_link').href = docUrl;
     document.getElementById('result_link').textContent = formData.docTitle + ' — Open in Google Docs →';
-
+ 
     const preview = document.getElementById('image_preview');
     preview.innerHTML = matchedImages.length
       ? matchedImages.map(img => `<div class="image-chip"><span class="score">${img.score}pts</span>${img.filename}</div>`).join('')
       : '<div class="image-chip" style="grid-column:span 5;text-align:left;color:var(--muted)">No images matched — add your spreadsheet ID in Configuration to enable image matching.</div>';
-
+ 
     document.getElementById('result_card').classList.add('show');
     log('─────────────────────', 'dim');
     log('Done. Open the doc, add your mock-up and example images, then export as PDF.', 'ok');
-
+ 
   } catch(e) {
     log('✗ ' + e.message, 'err');
     console.error(e);
   }
-
+ 
   btn.disabled = false;
   btn.innerHTML = 'Generate proposal → Google Doc';
 }
-
+ 
 // ── Init ──────────────────────────────────────────────────────────────────
 loadConfig();
 </script>
